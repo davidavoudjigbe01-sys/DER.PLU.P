@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Église "Dernière Pluie de Pièrres"</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Cinzel:wght@400;600&family=Lato:wght@300;400&display=swap" rel="stylesheet">
+<meta name="description" content="Église Dernière Pluie de Pierres — Un lieu de foi, un centre pour tous les malades. Lomé, Togo.">
+<meta name="keywords" content="DERPLUP, Dernière Pluie de Pierres, église Lomé, église Togo, chrétien Lomé">
+<meta name="author" content="Église Dernière Pluie de Pierres">
+<title>DERPLUP — Église Dernière Pluie de Pierres | Lomé, Togo</title>
+<style>
+  :root {
+    --gold: #C9A84C;
+    --gold-light: #E8C97A;
+    --gold-pale: #F5E9C8;
+    --navy: #0D1B2A;
+    --navy-mid: #162535;
+    --cream: #FAF6EE;
+    --text: #2C2C2C;
+    --text-light: #6B6B6B;
+    --white: #FFFFFF;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: 'Lato', sans-serif;
+    background: var(--cream);
+    color: var(--text);
+    overflow-x: hidden;
+  }
+
+  /* ── NAV ── */
+  nav {
+    position: fixed; top: 0; width: 100%; z-index: 100;
+    background: rgba(13,27,42,0.95);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(201,168,76,0.3);
+    padding: 0 5%;
+    display: flex; align-items: center; justify-content: space-between;
+    height: 70px;
+  }
+  .nav-logo {
+    font-family: 'Cinzel', serif;
+    color: var(--gold);
+    font-size: 1.1rem;
+    letter-spacing: 0.1em;
+    text-decoration: none;
+  }
+  .nav-links { display: flex; gap: 2rem; list-style: none; }
+  .nav-links a {
+    color: rgba(255,255,255,0.8);
+    text-decoration: none;
+    font-size: 0.85rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    transition: color 0.3s;
+  }
+  .nav-links a:hover { color: var(--gold-light); }
+
+  /* ── HERO ── */
+  .hero {
+    min-height: 100vh;
+    background: linear-gradient(rgba(13,27,42,0.75), rgba(13,27,42,0.85)),
+                url('logo dpp.jpg') center/cover no-repeat;
+    position: relative;
+    display: flex; align-items: center; justify-content: center;
+    overflow: hidden;
+}
+  .hero-bg {
+    position: absolute; inset: 0;
+    background: radial-gradient(ellipse at 30% 50%, rgba(201,168,76,0.12) 0%, transparent 60%),
+                radial-gradient(ellipse at 80% 20%, rgba(201,168,76,0.08) 0%, transparent 50%);
+  }
+  .hero-lines { position: absolute; inset: 0; overflow: hidden; opacity: 0.07; }
+  .hero-lines::before {
+    content: '';
+    position: absolute;
+    top: -50%; left: 50%;
+    width: 2px; height: 200%;
+    background: linear-gradient(to bottom, transparent, var(--gold), transparent);
+    transform: rotate(20deg);
+  }
+  .hero-lines::after {
+    content: '';
+    position: absolute;
+    top: -50%; left: 30%;
+    width: 1px; height: 200%;
+    background: linear-gradient(to bottom, transparent, var(--gold), transparent);
+    transform: rotate(-15deg);
+  }
+  .hero-content {
+    text-align: center; position: relative; z-index: 2;
+    padding: 2rem;
+    animation: fadeUp 1.2s ease both;
+  }
+  .hero-cross {
+    font-size: 3rem; color: var(--gold); margin-bottom: 1.5rem;
+    display: block;
+    animation: fadeUp 1s ease 0.2s both;
+  }
+  .hero-subtitle {
+    font-family: 'Cinzel', serif;
+    color: var(--gold);
+    font-size: 0.8rem;
+    letter-spacing: 0.4em;
+    text-transform: uppercase;
+    margin-bottom: 1.2rem;
+    animation: fadeUp 1s ease 0.3s both;
+  }
+  .hero h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(3rem, 7vw, 6rem);
+    font-weight: 300;
+    color: var(--white);
+    line-height: 1.1;
+    margin-bottom: 1.5rem;
+    animation: fadeUp 1s ease 0.4s both;
+  }
+  .hero h1 em { font-style: italic; color: var(--gold-light); }
+  .hero p {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.3rem;
+    color: rgba(255,255,255,0.65);
+    font-style: italic;
+    max-width: 500px; margin: 0 auto 2.5rem;
+    animation: fadeUp 1s ease 0.5s both;
+  }
+  .hero-cta {
+    display: inline-block;
+    padding: 1rem 2.5rem;
+    border: 1px solid var(--gold);
+    color: var(--gold);
+    text-decoration: none;
+    font-size: 0.8rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    transition: all 0.3s;
+    font-family: 'Cinzel', serif;
+    animation: fadeUp 1s ease 0.6s both;
+  }
+  .hero-cta:hover { background: var(--gold); color: var(--navy); }
+  .scroll-indicator {
+    position: absolute; bottom: 2rem; left: 50%; transform: translateX(-50%);
+    display: flex; flex-direction: column; align-items: center; gap: 0.5rem;
+    color: rgba(255,255,255,0.4); font-size: 0.7rem; letter-spacing: 0.2em;
+    text-transform: uppercase;
+    animation: bounce 2s ease-in-out infinite;
+  }
+  .scroll-indicator::after { content: '↓'; font-size: 1.2rem; }
+
+  /* ── SECTION BASE ── */
+  section { padding: 6rem 5%; }
+  .section-label {
+    font-family: 'Cinzel', serif;
+    font-size: 0.7rem;
+    letter-spacing: 0.4em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 0.8rem;
+    display: block;
+  }
+  .section-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(2rem, 4vw, 3.2rem);
+    font-weight: 300;
+    line-height: 1.2;
+  }
+  .gold-divider {
+    width: 50px; height: 2px;
+    background: linear-gradient(to right, var(--gold), transparent);
+    margin: 1.5rem 0;
+  }
+
+  /* ── BIENVENUE ── */
+  .welcome {
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: 5rem; align-items: center;
+    max-width: 1200px; margin: 0 auto;
+  }
+  .welcome-text p {
+    color: var(--text-light);
+    line-height: 1.9; font-size: 1rem; margin-bottom: 1rem;
+  }
+  .welcome-verse {
+    background: var(--navy);
+    padding: 3rem;
+    position: relative; overflow: hidden;
+  }
+  .welcome-verse::before {
+    content: '"';
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 12rem;
+    color: rgba(201,168,76,0.1);
+    position: absolute; top: -2rem; left: 1rem;
+    line-height: 1;
+  }
+  .welcome-verse blockquote {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.5rem; font-style: italic;
+    color: var(--white); line-height: 1.6;
+    position: relative; z-index: 1;
+  }
+  .welcome-verse cite {
+    display: block;
+    font-family: 'Cinzel', serif;
+    font-size: 0.75rem; color: var(--gold);
+    letter-spacing: 0.2em; margin-top: 1.5rem; font-style: normal;
+  }
+
+  /* ── CULTES ── */
+  .cultes-section { background: var(--cream); }
+  .cultes-grid {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 1.5rem; margin-top: 3rem; max-width: 1100px;
+  }
+  .culte-card {
+    background: var(--white);
+    border-top: 3px solid var(--gold);
+    padding: 2.5rem 2rem;
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
+  .culte-card:hover { transform: translateY(-5px); box-shadow: 0 20px 50px rgba(0,0,0,0.08); }
+  .culte-icon { font-size: 2rem; margin-bottom: 1rem; display: block; }
+  .culte-card h3 {
+    font-family: 'Cinzel', serif;
+    font-size: 0.9rem; letter-spacing: 0.15em;
+    margin-bottom: 0.5rem; color: var(--navy);
+  }
+  .culte-card .time {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2rem; color: var(--gold);
+    font-weight: 300; display: block; margin: 0.5rem 0;
+  }
+  .culte-card p { font-size: 0.9rem; color: var(--text-light); line-height: 1.6; }
+
+  /* ── ÉVÉNEMENTS ── */
+  .events-section { background: var(--navy); position: relative; overflow: hidden; }
+  .events-section .section-title { color: var(--white); }
+  .events-section .section-label { color: var(--gold-light); }
+  .events-bg {
+    position: absolute; inset: 0;
+    background: radial-gradient(ellipse at 80% 50%, rgba(201,168,76,0.07) 0%, transparent 70%);
+  }
+  .events-content { position: relative; z-index: 1; max-width: 1100px; }
+  .events-list { margin-top: 3rem; display: flex; flex-direction: column; gap: 1px; }
+  .event-item {
+    display: grid; grid-template-columns: 100px 1fr auto;
+    gap: 2rem; align-items: center;
+    padding: 1.8rem 0;
+    border-bottom: 1px solid rgba(201,168,76,0.2);
+    transition: all 0.3s; cursor: default;
+  }
+  .event-item:hover { padding-left: 1rem; }
+  .event-date {
+    text-align: center;
+    border-right: 1px solid rgba(201,168,76,0.3);
+    padding-right: 2rem;
+  }
+  .event-date .day {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2.5rem; color: var(--gold);
+    font-weight: 300; display: block; line-height: 1;
+  }
+  .event-date .month {
+    font-family: 'Cinzel', serif;
+    font-size: 0.65rem; color: rgba(255,255,255,0.5);
+    letter-spacing: 0.2em; text-transform: uppercase;
+  }
+  .event-info h4 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.3rem; color: var(--white); margin-bottom: 0.3rem;
+  }
+  .event-info p { font-size: 0.85rem; color: rgba(255,255,255,0.5); }
+  .event-tag {
+    font-family: 'Cinzel', serif;
+    font-size: 0.65rem; letter-spacing: 0.15em;
+    padding: 0.3rem 0.8rem;
+    border: 1px solid rgba(201,168,76,0.4);
+    color: var(--gold); text-transform: uppercase;
+  }
+
+  /* ── CONTACT ── */
+  .contact-section {
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: 5rem; max-width: 1200px; margin: 0 auto;
+  }
+  .contact-detail {
+    display: flex; gap: 1rem; align-items: flex-start;
+    margin-bottom: 1.5rem;
+  }
+  .contact-detail .icon { font-size: 1.2rem; color: var(--gold); width: 1.5rem; flex-shrink: 0; padding-top: 2px; }
+  .contact-detail div h4 {
+    font-family: 'Cinzel', serif;
+    font-size: 0.75rem; letter-spacing: 0.15em;
+    color: var(--navy); margin-bottom: 0.3rem;
+  }
+  .contact-detail div p { color: var(--text-light); font-size: 0.95rem; line-height: 1.6; }
+  .form-group { margin-bottom: 1.2rem; }
+  .form-group input, .form-group textarea {
+    width: 100%; padding: 1rem;
+    border: 1px solid #E0D8C8;
+    background: var(--cream);
+    font-family: 'Lato', sans-serif;
+    font-size: 0.9rem; color: var(--text);
+    outline: none; transition: border-color 0.3s; resize: none;
+  }
+  .form-group input:focus, .form-group textarea:focus { border-color: var(--gold); }
+  .form-group textarea { min-height: 120px; }
+  .form-submit {
+    width: 100%; padding: 1rem;
+    background: var(--navy); color: var(--gold);
+    border: 1px solid var(--navy);
+    font-family: 'Cinzel', serif;
+    font-size: 0.8rem; letter-spacing: 0.2em;
+    text-transform: uppercase; cursor: pointer; transition: all 0.3s;
+  }
+  .form-submit:hover { background: var(--gold); color: var(--navy); border-color: var(--gold); }
+
+  /* ── FOOTER ── */
+  footer {
+    background: var(--navy);
+    border-top: 1px solid rgba(201,168,76,0.2);
+    padding: 3rem 5%; text-align: center;
+  }
+  footer .logo {
+    font-family: 'Cinzel', serif; color: var(--gold);
+    font-size: 1.2rem; letter-spacing: 0.15em;
+    margin-bottom: 1rem; display: block;
+  }
+  footer p { color: rgba(255,255,255,0.35); font-size: 0.8rem; letter-spacing: 0.1em; }
+  footer .cross { display: block; font-size: 1.5rem; color: rgba(201,168,76,0.4); margin-top: 1.5rem; }
+
+  /* ── ANIMATIONS ── */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+  @keyframes bounce {
+    0%, 100% { transform: translateX(-50%) translateY(0); }
+    50%       { transform: translateX(-50%) translateY(-8px); }
+  }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 768px) {
+    .welcome, .contact-section { grid-template-columns: 1fr; gap: 3rem; }
+    .event-item { grid-template-columns: 80px 1fr; }
+    .event-tag { display: none; }
+    .nav-links { display: none; }
+    nav { padding: 0 1.5rem; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="#accueil" class="nav-logo">✝ "DERNIRES PLUIES DE PIERRES"</a>
+  <ul class="nav-links">
+    <li><a href="#bienvenue">À Propos</a></li>
+    <li><a href="#cultes">Cultes</a></li>
+    <li><a href="#evenements">Événements</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="accueil">
+  <div class="hero-bg"></div>
+  <div class="hero-lines"></div>
+  <div class="hero-content">
+    <span class="hero-cross">✝</span>
+    <p class="hero-subtitle">Bienvenue dans la maison de DIEU</p>
+    <h1>Église<br><em>"Dernière Pluie de Pièrres"</em></h1>
+    <p>Un lieu de foi, Un centre pour tous les malades — ouvert à tous.</p>
+    <a href="#bienvenue" class="hero-cta">Nous rejoindre</a>
+  </div>
+  <div class="scroll-indicator">Découvrir</div>
+</section>
+
+<!-- BIENVENUE -->
+<section id="bienvenue" style="background: var(--white); padding: 7rem 5%;">
+  <div class="welcome">
+    <div class="welcome-text">
+      <span class="section-label">Notre histoire</span>
+      <h2 class="section-title">Une communauté fondée sur la foi</h2>
+      <div class="gold-divider"></div>
+      <p>L'Église "Dernière Pluie de Pièrres" est une communauté chrétienne chaleureuse et dynamique, ouverte à toutes et à tous, quelle que soit votre histoire ou votre parcours.</p>
+      <p>Nous croyons en un Dieu d'amour qui transforme les vies et rassemble les familles. Chaque dimanche, nous nous réunissons pour adorer, prier, et grandir ensemble dans notre foi.</p>
+      <p>Que vous soyez croyant de longue date ou simplement curieux, vous êtes le bienvenu parmi nous. Notre porte est toujours ouverte.</p>
+    </div>
+    <div class="welcome-verse">
+      <blockquote>« Car là où deux ou trois sont réunis en mon nom, je suis au milieu d'eux. »</blockquote>
+      <cite>Matthieu 18:20</cite>
+    </div>
+  </div>
+</section>
+
+<!-- CULTES -->
+<section class="cultes-section" id="cultes">
+  <div style="max-width: 1100px;">
+    <span class="section-label">Horaires</span>
+    <h2 class="section-title">Rejoignez-nous en culte</h2>
+    <div class="gold-divider"></div>
+
+    <div class="cultes-grid">
+      <div class="culte-card">
+        <span class="culte-icon">🙏</span>
+        <h3>Culte du Dimanche</h3>
+        <span class="time">09h00</span>
+        <p>Notre culte principal — louange, adoration, prédication et délivrance.</p>
+      </div>
+   
+      <div class="culte-card">
+        <span class="culte-icon">🙏</span>
+        <h3>Armée de Midi</h3>
+        <span class="time">Vendredi 12h30</span>
+        <p>Un moment dédié à l'intercession et à la prière communautaire.</p>
+      </div>
+      <div class="culte-card">
+        <span class="culte-icon">🙏</span>
+        <h3>Culte de Jeudi</h3>
+        <span class="time">Jeudi 17h</span>
+        <p> </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ÉVÉNEMENTS -->
+<section class="events-section" id="evenements">
+  <div class="events-bg"></div>
+  <div class="events-content">
+    <span class="section-label">Agenda</span>
+    <h2 class="section-title">Prochains événements</h2>
+    <div class="gold-divider"></div>
+    <div class="events-list">
+      <div class="event-item">
+        <div class="event-date"><span class="day">06-12</span><span class="month">Avril</span></div>
+        <div class="event-info"><h4>Lundi au Dimanche</h4><p>DER.PLU.P 30 ans </p></div>
+        <span class="event-tag">Anniversaire</span>
+      </div>
+    
+      <div class="event-item">
+        <div class="event-date"><span class="day">05</span><span class="month">Avril</span></div>
+        <div class="event-info"><h4>Dimanche de Pâques</h4><p>Célébration de la Résurrection — culte à 09h00</p></div>
+        <span class="event-tag">Célébration</span>
+      </div>
+     
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section style="background: var(--white); padding: 7rem 5%;" id="contact">
+  <div class="contact-section">
+    <div class="contact-info">
+      <span class="section-label">Nous trouver</span>
+      <h2 class="section-title">Venez nous rendre visite</h2>
+      <div class="gold-divider"></div>
+      <div class="contact-detail">
+        <div class="icon">📍</div>
+        <div><h4>Adresse</h4><p><br>TOGO 2000 dans la von de la station Fastar, Lomé — Togo</p></div>
+      </div>
+      <div class="contact-detail">
+        <div class="icon">📞</div>
+        <div><h4>Téléphone</h4><p>+228 90 04 40 46</p></div>
+      </div>
+      
+      </div>
+      <div class="contact-detail">
+        <div class="icon">🕐</div>
+        <div><h4>Accueil</h4><p>Lundi – Vendredi : 8h00 – 17h00<br>Dimanche : dès 9h00</p></div>
+      </div>
+    </div>
+    <div class="contact-form">
+      <span class="section-label">Message</span>
+      <h2 class="section-title">Écrivez-nous</h2>
+      <div class="gold-divider"></div>
+      <div class="form-group"><input type="text" placeholder="Votre nom"></div>
+      <div class="form-group"><input type="email" placeholder="Votre email"></div>
+      <div class="form-group"><input type="text" placeholder="Sujet"></div>
+      <div class="form-group"><textarea placeholder="Votre message..."></textarea></div>
+      <button class="form-submit" onclick="alert('Message envoyé ! Que Dieu vous bénisse.')">Envoyer le message</button>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <span class="logo">✝ Église "Dernière Pluie de Pièrres"</span>
+  <p>TOGO 2000 dans la von de la station FASTAR, Lomé — Togo &nbsp;|&nbsp; +228 90 04 40 46</p>
+  <p style="margin-top:0.5rem;">© 2026 — Tous droits réservés</p>
+  <span class="cross">✝</span>
+</footer>
+
+</body>
+</html>
