@@ -3,557 +3,870 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Église "Dernière Pluie de Pierres"</title>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Cinzel:wght@400;600&family=Lato:wght@300;400&display=swap" rel="stylesheet">
-<meta name="description" content="Église Dernière Pluie de Pierres — Un lieu de foi, un centre pour tous les malades. Lomé, Togo.">
-<meta name="keywords" content="DERPLUP, Dernière Pluie de Pierres, église Lomé, église Togo, chrétien Lomé">
-<meta name="author" content="Église Dernière Pluie de Pierres">
 <title>DERPLUP — Église Dernière Pluie de Pierres | Lomé, Togo</title>
+<meta name="description" content="Église Dernière Pluie de Pierres — Un lieu de foi, un centre pour tous les malades. Lomé, Togo.">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 <style>
-  :root {
-    --gold: #C9A84C;
-    --gold-light: #E8C97A;
-    --gold-pale: #F5E9C8;
-    --navy: #0D1B2A;
-    --navy-mid: #162535;
-    --cream: #FAF6EE;
-    --text: #2C2C2C;
-    --text-light: #6B6B6B;
-    --white: #FFFFFF;
-  }
-
-  * { margin: 0; padding: 0; box-sizing: border-box; }
-  html { scroll-behavior: smooth; }
-  body {
-    font-family: 'Lato', sans-serif;
-    background: var(--cream);
-    color: var(--text);
-    overflow-x: hidden;
-  }
-
-  /* ── NAV ── */
-  nav {
-    position: fixed; top: 0; width: 100%; z-index: 100;
-    background: rgba(13,27,42,0.95);
-    backdrop-filter: blur(10px);
-    border-bottom: 1px solid rgba(201,168,76,0.3);
-    padding: 0 5%;
-    display: flex; align-items: center; justify-content: space-between;
-    height: 70px;
-  }
-  .nav-logo {
-    font-family: 'Cinzel', serif;
-    color: var(--gold);
-    font-size: 1.1rem;
-    letter-spacing: 0.1em;
-    text-decoration: none;
-  }
-  .nav-links { display: flex; gap: 2rem; list-style: none; }
-  .nav-links a {
-    color: rgba(255,255,255,0.8);
-    text-decoration: none;
-    font-size: 0.85rem;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    transition: color 0.3s;
-  }
-  .nav-links a:hover { color: var(--gold-light); }
-
-  /* ── HERO ── */
-  .hero {
-    min-height: 100vh;
-     background: linear-gradient(rgba(13,27,42,0.75), rgba(13,27,42,0.85)),
-            url('logo-dpp.jpg') center/cover no-repeat;
-    position: relative;
-    display: flex; align-items: center; justify-content: center;
-    overflow: hidden;
+:root {
+  --sky: #0EA5E9;
+  --sky-dark: #0284C7;
+  --sky-deep: #0C4A6E;
+  --sky-light: #E0F2FE;
+  --sky-pale: #F0F9FF;
+  --white: #FFFFFF;
+  --ink: #0F172A;
+  --slate: #334155;
+  --muted: #64748B;
+  --border: rgba(14,165,233,0.15);
+  --border-soft: rgba(15,23,42,0.08);
+  --gold: #F59E0B;
 }
-  .hero-bg {
-    position: absolute; inset: 0;
-    background: radial-gradient(ellipse at 30% 50%, rgba(201,168,76,0.12) 0%, transparent 60%),
-                radial-gradient(ellipse at 80% 20%, rgba(201,168,76,0.08) 0%, transparent 50%);
-  }
-  .hero-lines { position: absolute; inset: 0; overflow: hidden; opacity: 0.07; }
-  .hero-lines::before {
-    content: '';
-    position: absolute;
-    top: -50%; left: 50%;
-    width: 2px; height: 200%;
-    background: linear-gradient(to bottom, transparent, var(--gold), transparent);
-    transform: rotate(20deg);
-  }
-  .hero-lines::after {
-    content: '';
-    position: absolute;
-    top: -50%; left: 30%;
-    width: 1px; height: 200%;
-    background: linear-gradient(to bottom, transparent, var(--gold), transparent);
-    transform: rotate(-15deg);
-  }
-  .hero-content {
-    text-align: center; position: relative; z-index: 2;
-    padding: 2rem;
-    animation: fadeUp 1.2s ease both;
-  }
-  .hero-cross {
-    font-size: 3rem; color: var(--gold); margin-bottom: 1.5rem;
-    display: block;
-    animation: fadeUp 1s ease 0.2s both;
-  }
-  .hero-subtitle {
-    font-family: 'Cinzel', serif;
-    color: var(--gold);
-    font-size: 0.8rem;
-    letter-spacing: 0.4em;
-    text-transform: uppercase;
-    margin-bottom: 1.2rem;
-    animation: fadeUp 1s ease 0.3s both;
-  }
-  .hero h1 {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: clamp(3rem, 7vw, 6rem);
-    font-weight: 300;
-    color: var(--white);
-    line-height: 1.1;
-    margin-bottom: 1.5rem;
-    animation: fadeUp 1s ease 0.4s both;
-  }
-  .hero h1 em { font-style: italic; color: var(--gold-light); }
-  .hero p {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 1.3rem;
-    color: rgba(255,255,255,0.65);
-    font-style: italic;
-    max-width: 500px; margin: 0 auto 2.5rem;
-    animation: fadeUp 1s ease 0.5s both;
-  }
-  .hero-cta {
-    display: inline-block;
-    padding: 1rem 2.5rem;
-    border: 1px solid var(--gold);
-    color: var(--gold);
-    text-decoration: none;
-    font-size: 0.8rem;
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-    transition: all 0.3s;
-    font-family: 'Cinzel', serif;
-    animation: fadeUp 1s ease 0.6s both;
-  }
-  .hero-cta:hover { background: var(--gold); color: var(--navy); }
-  .scroll-indicator {
-    position: absolute; bottom: 2rem; left: 50%; transform: translateX(-50%);
-    display: flex; flex-direction: column; align-items: center; gap: 0.5rem;
-    color: rgba(255,255,255,0.4); font-size: 0.7rem; letter-spacing: 0.2em;
-    text-transform: uppercase;
-    animation: bounce 2s ease-in-out infinite;
-  }
-  .scroll-indicator::after { content: '↓'; font-size: 1.2rem; }
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{font-family:'Inter',sans-serif;background:var(--white);color:var(--ink);overflow-x:hidden;}
 
-  /* ── SECTION BASE ── */
-  section { padding: 6rem 5%; }
-  .section-label {
-    font-family: 'Cinzel', serif;
-    font-size: 0.7rem;
-    letter-spacing: 0.4em;
-    text-transform: uppercase;
-    color: var(--gold);
-    margin-bottom: 0.8rem;
-    display: block;
-  }
-  .section-title {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: clamp(2rem, 4vw, 3.2rem);
-    font-weight: 300;
-    line-height: 1.2;
-  }
-  .gold-divider {
-    width: 50px; height: 2px;
-    background: linear-gradient(to right, var(--gold), transparent);
-    margin: 1.5rem 0;
-  }
+/* ═══ NAV ═══ */
+nav{
+  position:fixed;top:0;width:100%;z-index:200;
+  background:rgba(255,255,255,0.92);
+  backdrop-filter:blur(20px);
+  border-bottom:1px solid var(--border-soft);
+  padding:0 5%;height:68px;
+  display:flex;align-items:center;justify-content:space-between;
+}
+.nav-brand{display:flex;align-items:center;gap:12px;text-decoration:none;}
+.nav-brand-logo{width:36px;height:36px;object-fit:contain;}
+.nav-brand-text{
+  font-family:'Playfair Display',serif;
+  font-size:1rem;font-weight:700;
+  color:var(--sky-deep);letter-spacing:0.02em;
+}
+.nav-links{display:flex;gap:2.5rem;list-style:none;}
+.nav-links a{
+  color:var(--slate);font-size:0.83rem;font-weight:500;
+  text-decoration:none;letter-spacing:0.05em;text-transform:uppercase;
+  transition:color 0.25s;
+}
+.nav-links a:hover{color:var(--sky);}
+.nav-cta{
+  padding:0.5rem 1.25rem;
+  background:var(--sky);color:var(--white);
+  border-radius:100px;font-size:0.8rem;font-weight:600;
+  text-decoration:none;letter-spacing:0.03em;
+  transition:background 0.25s,transform 0.2s;
+}
+.nav-cta:hover{background:var(--sky-dark);transform:translateY(-1px);}
 
-  /* ── BIENVENUE ── */
-  .welcome {
-    display: grid; grid-template-columns: 1fr 1fr;
-    gap: 5rem; align-items: center;
-    max-width: 1200px; margin: 0 auto;
-  }
-  .welcome-text p {
-    color: var(--text-light);
-    line-height: 1.9; font-size: 1rem; margin-bottom: 1rem;
-  }
-  .welcome-verse {
-    background: var(--navy);
-    padding: 3rem;
-    position: relative; overflow: hidden;
-  }
-  .welcome-verse::before {
-    content: '"';
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 12rem;
-    color: rgba(201,168,76,0.1);
-    position: absolute; top: -2rem; left: 1rem;
-    line-height: 1;
-  }
-  .welcome-verse blockquote {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 1.5rem; font-style: italic;
-    color: var(--white); line-height: 1.6;
-    position: relative; z-index: 1;
-  }
-  .welcome-verse cite {
-    display: block;
-    font-family: 'Cinzel', serif;
-    font-size: 0.75rem; color: var(--gold);
-    letter-spacing: 0.2em; margin-top: 1.5rem; font-style: normal;
-  }
+/* ═══ HERO ═══ */
+.hero{
+  min-height:100vh;
+  background:linear-gradient(160deg,var(--sky-deep) 0%,#0369A1 40%,#0284C7 70%,var(--sky) 100%);
+  display:flex;align-items:center;justify-content:center;
+  position:relative;overflow:hidden;padding-top:68px;
+}
+.hero-orbs{position:absolute;inset:0;pointer-events:none;}
+.orb{
+  position:absolute;border-radius:50%;
+  background:rgba(255,255,255,0.05);
+}
+.orb1{width:600px;height:600px;top:-100px;right:-150px;}
+.orb2{width:400px;height:400px;bottom:-100px;left:-80px;}
+.orb3{width:200px;height:200px;top:30%;left:10%;background:rgba(255,255,255,0.04);}
+/* rain drops decoration */
+.rain-bg{
+  position:absolute;inset:0;
+  background-image:
+    radial-gradient(circle 2px at 20% 30%,rgba(255,255,255,0.15) 0%,transparent 100%),
+    radial-gradient(circle 1.5px at 60% 50%,rgba(255,255,255,0.1) 0%,transparent 100%),
+    radial-gradient(circle 2px at 80% 20%,rgba(255,255,255,0.12) 0%,transparent 100%),
+    radial-gradient(circle 1px at 35% 70%,rgba(255,255,255,0.1) 0%,transparent 100%),
+    radial-gradient(circle 2px at 75% 80%,rgba(255,255,255,0.08) 0%,transparent 100%);
+}
+.hero-content{
+  text-align:center;position:relative;z-index:2;
+  max-width:800px;padding:4rem 2rem;
+}
+.hero-logo{
+  width:120px;height:120px;object-fit:contain;
+  margin-bottom:2rem;
+  filter:drop-shadow(0 0 30px rgba(255,255,255,0.3));
+  animation:floatUp 1.2s ease both;
+}
+.hero-eyebrow{
+  display:inline-block;
+  background:rgba(255,255,255,0.15);
+  border:1px solid rgba(255,255,255,0.25);
+  color:rgba(255,255,255,0.9);
+  font-size:0.7rem;font-weight:600;letter-spacing:0.25em;
+  text-transform:uppercase;padding:0.4rem 1rem;border-radius:100px;
+  margin-bottom:1.5rem;
+  animation:floatUp 1s ease 0.2s both;
+}
+.hero h1{
+  font-family:'Playfair Display',serif;
+  font-size:clamp(2.8rem,7vw,5.5rem);
+  font-weight:700;color:var(--white);
+  line-height:1.08;margin-bottom:1.5rem;
+  animation:floatUp 1s ease 0.35s both;
+}
+.hero h1 span{font-style:italic;font-weight:400;}
+.hero-lead{
+  font-size:1.1rem;color:rgba(255,255,255,0.75);
+  line-height:1.7;max-width:500px;margin:0 auto 2.5rem;
+  animation:floatUp 1s ease 0.5s both;
+}
+.hero-actions{
+  display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;
+  animation:floatUp 1s ease 0.65s both;
+}
+.btn-hero{
+  padding:0.9rem 2rem;border-radius:100px;
+  font-size:0.85rem;font-weight:600;letter-spacing:0.05em;
+  text-decoration:none;transition:all 0.25s;
+}
+.btn-primary{background:var(--white);color:var(--sky-deep);}
+.btn-primary:hover{background:var(--sky-light);transform:translateY(-2px);}
+.btn-ghost{
+  background:transparent;color:var(--white);
+  border:1.5px solid rgba(255,255,255,0.4);
+}
+.btn-ghost:hover{background:rgba(255,255,255,0.1);border-color:rgba(255,255,255,0.7);}
+.hero-scroll{
+  position:absolute;bottom:2rem;left:50%;transform:translateX(-50%);
+  color:rgba(255,255,255,0.4);font-size:0.65rem;letter-spacing:0.25em;
+  text-transform:uppercase;display:flex;flex-direction:column;align-items:center;gap:0.5rem;
+  animation:bounce 2.5s ease-in-out infinite;
+}
+.hero-scroll svg{width:20px;height:20px;stroke:rgba(255,255,255,0.4);}
 
-  /* ── CULTES ── */
-  .cultes-section { background: var(--cream); }
-  .cultes-grid {
-    display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-    gap: 1.5rem; margin-top: 3rem; max-width: 1100px;
-  }
-  .culte-card {
-    background: var(--white);
-    border-top: 3px solid var(--gold);
-    padding: 2.5rem 2rem;
-    transition: transform 0.3s, box-shadow 0.3s;
-  }
-  .culte-card:hover { transform: translateY(-5px); box-shadow: 0 20px 50px rgba(0,0,0,0.08); }
-  .culte-icon { font-size: 2rem; margin-bottom: 1rem; display: block; }
-  .culte-card h3 {
-    font-family: 'Cinzel', serif;
-    font-size: 0.9rem; letter-spacing: 0.15em;
-    margin-bottom: 0.5rem; color: var(--navy);
-  }
-  .culte-card .time {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 2rem; color: var(--gold);
-    font-weight: 300; display: block; margin: 0.5rem 0;
-  }
-  .culte-card p { font-size: 0.9rem; color: var(--text-light); line-height: 1.6; }
+/* ═══ SECTION BASE ═══ */
+.section{padding:7rem 5%;}
+.section-inner{max-width:1150px;margin:0 auto;}
+.eyebrow{
+  display:inline-flex;align-items:center;gap:0.5rem;
+  color:var(--sky);font-size:0.72rem;font-weight:600;
+  letter-spacing:0.2em;text-transform:uppercase;margin-bottom:1rem;
+}
+.eyebrow::before{
+  content:'';display:block;width:24px;height:2px;
+  background:var(--sky);border-radius:2px;
+}
+.section-title{
+  font-family:'Playfair Display',serif;
+  font-size:clamp(2rem,3.5vw,3rem);
+  font-weight:700;line-height:1.2;color:var(--ink);
+}
+.section-title em{font-style:italic;color:var(--sky);}
+.section-lead{
+  font-size:1.05rem;color:var(--muted);
+  line-height:1.8;margin-top:1rem;max-width:540px;
+}
 
-  /* ── ÉVÉNEMENTS ── */
-  .events-section { background: var(--navy); position: relative; overflow: hidden; }
-  .events-section .section-title { color: var(--white); }
-  .events-section .section-label { color: var(--gold-light); }
-  .events-bg {
-    position: absolute; inset: 0;
-    background: radial-gradient(ellipse at 80% 50%, rgba(201,168,76,0.07) 0%, transparent 70%);
-  }
-  .events-content { position: relative; z-index: 1; max-width: 1100px; }
-  .events-list { margin-top: 3rem; display: flex; flex-direction: column; gap: 1px; }
-  .event-item {
-    display: grid; grid-template-columns: 100px 1fr auto;
-    gap: 2rem; align-items: center;
-    padding: 1.8rem 0;
-    border-bottom: 1px solid rgba(201,168,76,0.2);
-    transition: all 0.3s; cursor: default;
-  }
-  .event-item:hover { padding-left: 1rem; }
-  .event-date {
-    text-align: center;
-    border-right: 1px solid rgba(201,168,76,0.3);
-    padding-right: 2rem;
-  }
-  .event-date .day {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 2.5rem; color: var(--gold);
-    font-weight: 300; display: block; line-height: 1;
-  }
-  .event-date .month {
-    font-family: 'Cinzel', serif;
-    font-size: 0.65rem; color: rgba(255,255,255,0.5);
-    letter-spacing: 0.2em; text-transform: uppercase;
-  }
-  .event-info h4 {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 1.3rem; color: var(--white); margin-bottom: 0.3rem;
-  }
-  .event-info p { font-size: 0.85rem; color: rgba(255,255,255,0.5); }
-  .event-tag {
-    font-family: 'Cinzel', serif;
-    font-size: 0.65rem; letter-spacing: 0.15em;
-    padding: 0.3rem 0.8rem;
-    border: 1px solid rgba(201,168,76,0.4);
-    color: var(--gold); text-transform: uppercase;
-  }
+/* ═══ À PROPOS ═══ */
+.about-section{background:var(--sky-pale);}
+.about-grid{
+  display:grid;grid-template-columns:1fr 1fr;
+  gap:5rem;align-items:center;
+}
+.about-text .section-lead{max-width:none;}
+.about-text p{
+  color:var(--slate);line-height:1.9;font-size:0.97rem;margin-top:1rem;
+}
+.about-verse{
+  background:var(--sky-deep);
+  border-radius:24px;
+  padding:3rem;position:relative;overflow:hidden;
+}
+.about-verse::before{
+  content:'\201C';
+  font-family:'Playfair Display',serif;
+  font-size:14rem;color:rgba(255,255,255,0.05);
+  position:absolute;top:-3rem;left:0.5rem;line-height:1;
+}
+.about-verse blockquote{
+  font-family:'Playfair Display',serif;
+  font-size:1.35rem;font-style:italic;color:var(--white);
+  line-height:1.65;position:relative;z-index:1;
+}
+.about-verse cite{
+  display:block;margin-top:1.5rem;
+  font-family:'Inter',sans-serif;font-style:normal;
+  font-size:0.75rem;font-weight:600;letter-spacing:0.15em;
+  color:var(--sky);text-transform:uppercase;
+}
+.stats-row{
+  display:flex;gap:2rem;margin-top:2.5rem;padding-top:2rem;
+  border-top:1px solid var(--border-soft);
+}
+.stat{text-align:left;}
+.stat-num{
+  font-family:'Playfair Display',serif;
+  font-size:2.2rem;font-weight:700;color:var(--sky-deep);line-height:1;
+}
+.stat-label{
+  font-size:0.8rem;color:var(--muted);margin-top:0.25rem;
+  font-weight:500;text-transform:uppercase;letter-spacing:0.1em;
+}
 
-  /* ── CONTACT ── */
-  .contact-section {
-    display: grid; grid-template-columns: 1fr 1fr;
-    gap: 5rem; max-width: 1200px; margin: 0 auto;
-  }
-  .contact-detail {
-    display: flex; gap: 1rem; align-items: flex-start;
-    margin-bottom: 1.5rem;
-  }
-  .contact-detail .icon { font-size: 1.2rem; color: var(--gold); width: 1.5rem; flex-shrink: 0; padding-top: 2px; }
-  .contact-detail div h4 {
-    font-family: 'Cinzel', serif;
-    font-size: 0.75rem; letter-spacing: 0.15em;
-    color: var(--navy); margin-bottom: 0.3rem;
-  }
-  .contact-detail div p { color: var(--text-light); font-size: 0.95rem; line-height: 1.6; }
-  .form-group { margin-bottom: 1.2rem; }
-  .form-group input, .form-group textarea {
-    width: 100%; padding: 1rem;
-    border: 1px solid #E0D8C8;
-    background: var(--cream);
-    font-family: 'Lato', sans-serif;
-    font-size: 0.9rem; color: var(--text);
-    outline: none; transition: border-color 0.3s; resize: none;
-  }
-  .form-group input:focus, .form-group textarea:focus { border-color: var(--gold); }
-  .form-group textarea { min-height: 120px; }
-  .form-submit {
-    width: 100%; padding: 1rem;
-    background: var(--navy); color: var(--gold);
-    border: 1px solid var(--navy);
-    font-family: 'Cinzel', serif;
-    font-size: 0.8rem; letter-spacing: 0.2em;
-    text-transform: uppercase; cursor: pointer; transition: all 0.3s;
-  }
-  .form-submit:hover { background: var(--gold); color: var(--navy); border-color: var(--gold); }
+/* ═══ CULTES ═══ */
+.cultes-section{background:var(--white);}
+.cultes-grid{
+  display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+  gap:1.5rem;margin-top:3.5rem;
+}
+.culte-card{
+  border:1px solid var(--border-soft);
+  border-radius:20px;padding:2.5rem 2rem;
+  transition:all 0.3s;position:relative;overflow:hidden;
+}
+.culte-card::before{
+  content:'';position:absolute;top:0;left:0;right:0;height:3px;
+  background:linear-gradient(90deg,var(--sky),var(--sky-dark));
+  border-radius:20px 20px 0 0;
+}
+.culte-card:hover{
+  box-shadow:0 20px 60px rgba(14,165,233,0.12);
+  transform:translateY(-4px);border-color:var(--border);
+}
+.culte-icon-wrap{
+  width:52px;height:52px;border-radius:14px;
+  background:var(--sky-pale);
+  display:flex;align-items:center;justify-content:center;
+  margin-bottom:1.5rem;font-size:1.4rem;
+}
+.culte-card h3{
+  font-family:'Playfair Display',serif;
+  font-size:1.15rem;font-weight:700;color:var(--ink);margin-bottom:0.4rem;
+}
+.culte-time{
+  font-size:1.8rem;font-weight:300;color:var(--sky);
+  font-family:'Playfair Display',serif;margin:0.5rem 0;display:block;
+}
+.culte-card p{font-size:0.88rem;color:var(--muted);line-height:1.7;}
 
-  /* ── FOOTER ── */
-  footer {
-    background: var(--navy);
-    border-top: 1px solid rgba(201,168,76,0.2);
-    padding: 3rem 5%; text-align: center;
-  }
-  footer .logo {
-    font-family: 'Cinzel', serif; color: var(--gold);
-    font-size: 1.2rem; letter-spacing: 0.15em;
-    margin-bottom: 1rem; display: block;
-  }
-  footer p { color: rgba(255,255,255,0.35); font-size: 0.8rem; letter-spacing: 0.1em; }
-  footer .cross { display: block; font-size: 1.5rem; color: rgba(201,168,76,0.4); margin-top: 1.5rem; }
+/* ═══ ÉVÉNEMENTS ═══ */
+.events-section{
+  background:linear-gradient(135deg,var(--sky-deep) 0%,#0369A1 100%);
+}
+.events-section .eyebrow{color:rgba(255,255,255,0.7);}
+.events-section .eyebrow::before{background:rgba(255,255,255,0.4);}
+.events-section .section-title{color:var(--white);}
+.events-list{margin-top:3rem;display:flex;flex-direction:column;gap:0;}
+.event-item{
+  display:grid;grid-template-columns:90px 1fr auto;
+  gap:2rem;align-items:center;
+  padding:1.8rem 0;
+  border-bottom:1px solid rgba(255,255,255,0.1);
+  transition:padding-left 0.3s;cursor:default;
+}
+.event-item:hover{padding-left:0.75rem;}
+.event-item:last-child{border-bottom:none;}
+.event-date-box{
+  text-align:center;
+  border-right:1px solid rgba(255,255,255,0.15);
+  padding-right:2rem;
+}
+.event-date-box .day{
+  font-family:'Playfair Display',serif;
+  font-size:2.2rem;font-weight:700;color:var(--sky);
+  display:block;line-height:1;
+}
+.event-date-box .month{
+  font-size:0.65rem;color:rgba(255,255,255,0.5);
+  letter-spacing:0.2em;text-transform:uppercase;
+  display:block;margin-top:0.25rem;
+}
+.event-info h4{
+  font-family:'Playfair Display',serif;
+  font-size:1.2rem;color:var(--white);margin-bottom:0.3rem;
+}
+.event-info p{font-size:0.85rem;color:rgba(255,255,255,0.55);}
+.event-badge{
+  padding:0.35rem 0.85rem;
+  border:1px solid rgba(255,255,255,0.2);
+  border-radius:100px;
+  font-size:0.65rem;font-weight:600;letter-spacing:0.15em;
+  text-transform:uppercase;color:rgba(255,255,255,0.7);
+  white-space:nowrap;
+}
 
-  /* ── ANIMATIONS ── */
-  @keyframes fadeUp {
-    from { opacity: 0; transform: translateY(30px); }
-    to   { opacity: 1; transform: translateY(0); }
-  }
-  @keyframes bounce {
-    0%, 100% { transform: translateX(-50%) translateY(0); }
-    50%       { transform: translateX(-50%) translateY(-8px); }
-  }
+/* ═══ VIDÉOS ═══ */
+.videos-section{background:var(--sky-pale);}
+.video-grid{
+  display:grid;grid-template-columns:1fr 2fr 1fr;
+  gap:1.5rem;align-items:start;margin-top:3rem;
+}
+.video-logo-wrap{
+  border-radius:20px;overflow:hidden;
+  border:1px solid var(--border);
+  aspect-ratio:1;display:flex;align-items:center;justify-content:center;
+  background:var(--white);padding:1.5rem;
+}
+.video-logo-wrap img{width:100%;height:100%;object-fit:contain;}
+.video-frame{border-radius:20px;overflow:hidden;border:1px solid var(--border);}
+.video-frame iframe{width:100%;height:280px;display:block;border:none;}
+.yt-cta{display:block;text-align:center;margin-top:2rem;}
 
-  /* ── RESPONSIVE ── */
-  @media (max-width: 768px) {
-    .welcome, .contact-section { grid-template-columns: 1fr; gap: 3rem; }
-    .event-item { grid-template-columns: 80px 1fr; }
-    .event-tag { display: none; }
-    .nav-links { display: none; }
-    nav { padding: 0 1.5rem; }
-  }
+/* ═══ GALERIE ═══ */
+.gallery-section{background:var(--white);}
+.gallery-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  grid-template-rows:200px 200px;
+  gap:1rem;margin-top:3rem;
+}
+.gallery-item{
+  border-radius:16px;overflow:hidden;
+  position:relative;cursor:pointer;
+}
+.gallery-item img{
+  width:100%;height:100%;object-fit:cover;
+  transition:transform 0.5s ease;
+  display:block;
+}
+.gallery-item:hover img{transform:scale(1.05);}
+.gallery-item:first-child{
+  grid-column:1/2;grid-row:1/3;border-radius:24px;
+}
+.gallery-overlay{
+  position:absolute;inset:0;
+  background:linear-gradient(to top,rgba(12,74,110,0.6) 0%,transparent 60%);
+  opacity:0;transition:opacity 0.3s;
+}
+.gallery-item:hover .gallery-overlay{opacity:1;}
+
+/* ═══ CONTACT ═══ */
+.contact-section{background:var(--sky-pale);}
+.contact-grid{
+  display:grid;grid-template-columns:1fr 1fr;
+  gap:5rem;align-items:start;
+}
+.contact-details{display:flex;flex-direction:column;gap:1.5rem;margin-top:2rem;}
+.contact-item{
+  display:flex;gap:1rem;align-items:flex-start;
+  padding:1.25rem;border-radius:16px;background:var(--white);
+  border:1px solid var(--border-soft);
+  transition:box-shadow 0.25s;
+}
+.contact-item:hover{box-shadow:0 8px 30px rgba(14,165,233,0.1);}
+.contact-icon{
+  width:42px;height:42px;border-radius:12px;
+  background:var(--sky-light);
+  display:flex;align-items:center;justify-content:center;
+  color:var(--sky-dark);font-size:1rem;flex-shrink:0;
+}
+.contact-item h4{
+  font-size:0.75rem;font-weight:700;text-transform:uppercase;
+  letter-spacing:0.1em;color:var(--muted);margin-bottom:0.25rem;
+}
+.contact-item p{font-size:0.93rem;color:var(--ink);line-height:1.6;}
+/* form */
+.form-card{
+  background:var(--white);border-radius:24px;padding:2.5rem;
+  border:1px solid var(--border-soft);
+  box-shadow:0 20px 60px rgba(14,165,233,0.06);
+}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:1rem;}
+.form-group{margin-bottom:1rem;}
+.form-group label{
+  display:block;font-size:0.78rem;font-weight:600;
+  color:var(--slate);margin-bottom:0.4rem;letter-spacing:0.05em;
+  text-transform:uppercase;
+}
+.form-group input,.form-group textarea{
+  width:100%;padding:0.85rem 1rem;
+  border:1.5px solid var(--border-soft);border-radius:12px;
+  font-family:'Inter',sans-serif;font-size:0.9rem;color:var(--ink);
+  background:var(--sky-pale);outline:none;transition:border-color 0.25s,background 0.25s;
+  resize:none;
+}
+.form-group input:focus,.form-group textarea:focus{
+  border-color:var(--sky);background:var(--white);
+}
+.form-group textarea{min-height:110px;}
+.btn-submit{
+  width:100%;padding:1rem;
+  background:linear-gradient(135deg,var(--sky) 0%,var(--sky-dark) 100%);
+  color:var(--white);border:none;border-radius:12px;
+  font-family:'Inter',sans-serif;font-size:0.88rem;font-weight:700;
+  letter-spacing:0.05em;cursor:pointer;transition:all 0.25s;
+  text-transform:uppercase;
+}
+.btn-submit:hover{box-shadow:0 8px 25px rgba(14,165,233,0.35);transform:translateY(-2px);}
+
+/* ═══ FOOTER ═══ */
+footer{
+  background:var(--sky-deep);
+  padding:4rem 5% 2.5rem;
+}
+.footer-inner{
+  max-width:1150px;margin:0 auto;
+  display:grid;grid-template-columns:1.5fr 1fr 1fr;gap:4rem;
+}
+.footer-brand .logo-wrap{display:flex;align-items:center;gap:12px;margin-bottom:1rem;}
+.footer-brand img{width:50px;height:50px;object-fit:contain;}
+.footer-brand h3{
+  font-family:'Playfair Display',serif;
+  color:var(--white);font-size:1rem;line-height:1.3;
+}
+.footer-brand p{color:rgba(255,255,255,0.5);font-size:0.85rem;line-height:1.7;margin-top:0.5rem;}
+.footer-col h4{
+  font-size:0.72rem;font-weight:700;letter-spacing:0.2em;
+  color:var(--sky);text-transform:uppercase;margin-bottom:1.25rem;
+}
+.footer-col ul{list-style:none;display:flex;flex-direction:column;gap:0.6rem;}
+.footer-col ul li a{
+  color:rgba(255,255,255,0.55);font-size:0.88rem;
+  text-decoration:none;transition:color 0.2s;
+}
+.footer-col ul li a:hover{color:var(--white);}
+.footer-col p{color:rgba(255,255,255,0.55);font-size:0.88rem;line-height:1.7;}
+.footer-bottom{
+  max-width:1150px;margin:3rem auto 0;
+  padding-top:1.5rem;border-top:1px solid rgba(255,255,255,0.1);
+  display:flex;align-items:center;justify-content:space-between;
+  flex-wrap:wrap;gap:1rem;
+}
+.footer-bottom p{color:rgba(255,255,255,0.3);font-size:0.8rem;}
+.socials{display:flex;gap:0.75rem;}
+.social-btn{
+  width:40px;height:40px;border-radius:50%;
+  background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.12);
+  display:flex;align-items:center;justify-content:center;
+  color:rgba(255,255,255,0.6);font-size:0.95rem;text-decoration:none;
+  transition:all 0.25s;
+}
+.social-btn:hover{background:var(--sky);border-color:var(--sky);color:var(--white);}
+
+/* ═══ ANIMATIONS ═══ */
+@keyframes floatUp{
+  from{opacity:0;transform:translateY(28px);}
+  to{opacity:1;transform:translateY(0);}
+}
+@keyframes bounce{
+  0%,100%{transform:translateX(-50%) translateY(0);}
+  50%{transform:translateX(-50%) translateY(-8px);}
+}
+
+/* ═══ SCROLL REVEAL ═══ */
+.reveal{opacity:0;transform:translateY(24px);transition:opacity 0.7s ease,transform 0.7s ease;}
+.reveal.visible{opacity:1;transform:none;}
+
+/* ═══ RESPONSIVE ═══ */
+@media(max-width:900px){
+  .about-grid,.contact-grid{grid-template-columns:1fr;gap:3rem;}
+  .footer-inner{grid-template-columns:1fr 1fr;gap:2.5rem;}
+  .video-grid{grid-template-columns:1fr;gap:1rem;}
+  .video-logo-wrap{display:none;}
+}
+@media(max-width:680px){
+  .nav-links,.nav-cta{display:none;}
+  .gallery-grid{grid-template-columns:1fr 1fr;grid-template-rows:auto;gap:0.6rem;}
+  .gallery-item:first-child{grid-column:1/3;grid-row:auto;}
+  .event-item{grid-template-columns:70px 1fr;gap:1rem;}
+  .event-badge{display:none;}
+  .form-row{grid-template-columns:1fr;}
+  .stats-row{flex-direction:column;gap:1rem;}
+  .footer-inner{grid-template-columns:1fr;}
+  .footer-bottom{flex-direction:column;align-items:flex-start;}
+}
 </style>
 </head>
 <body>
 
 <!-- NAV -->
 <nav>
-  <a href="#accueil" class="nav-logo">✝ "DERNIERES PLUIES DE PIERRES"</a>
+  <a href="#accueil" class="nav-brand">
+    <img class="nav-brand-logo" src="logo_dpp.jpg" alt="Logo DPP">
+    <span class="nav-brand-text">DERPLUP</span>
+  </a>
   <ul class="nav-links">
-    <li><a href="#bienvenue">À Propos</a></li>
+    <li><a href="#bienvenue">À propos</a></li>
     <li><a href="#cultes">Cultes</a></li>
     <li><a href="#evenements">Événements</a></li>
+    <li><a href="#videos">Sermons</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
+  <a href="#contact" class="nav-cta">Nous rejoindre</a>
 </nav>
 
 <!-- HERO -->
 <section class="hero" id="accueil">
-  <div class="hero-bg"></div>
-  <div class="hero-lines"></div>
-  <div class="hero-content">
-    <span class="hero-cross">✝</span>
-    <p class="hero-subtitle">Bienvenue dans la maison de DIEU</p>
-    <h1>Église<br><em>"Dernière Pluie de Pierres"</em></h1>
-    <p>Un lieu de foi, Un centre pour tous les malades — ouvert à tous.</p>
-    <a href="#bienvenue" class="hero-cta">Nous rejoindre</a>
+  <div class="hero-orbs">
+    <div class="orb orb1"></div>
+    <div class="orb orb2"></div>
+    <div class="orb orb3"></div>
   </div>
-  <div class="scroll-indicator">Découvrir</div>
+  <div class="rain-bg"></div>
+  <div class="hero-content">
+    <img class="hero-logo" src="logo_dpp.jpg" alt="Logo Église Dernière Pluie de Pierres">
+    <span class="hero-eyebrow">Bienvenue dans la maison de Dieu</span>
+    <h1>Dernière <span>Pluie</span><br>de Pierres</h1>
+    <p class="hero-lead">Un lieu de foi, un centre pour tous les malades — ouvert à toutes et à tous, à Lomé, Togo.</p>
+    <div class="hero-actions">
+      <a href="#bienvenue" class="btn-hero btn-primary">Nous découvrir</a>
+      <a href="#cultes" class="btn-hero btn-ghost">Horaires des cultes</a>
+    </div>
+  </div>
+  <div class="hero-scroll">
+    <span>Défiler</span>
+    <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M12 5v14M5 12l7 7 7-7"/>
+    </svg>
+  </div>
 </section>
 
-<!-- BIENVENUE -->
-<section id="bienvenue" style="background: var(--white); padding: 7rem 5%;">
-  <div class="welcome">
-    <div class="welcome-text">
-      <span class="section-label">Notre histoire</span>
-      <h2 class="section-title">Une communauté fondée sur la foi</h2>
-      <div class="gold-divider"></div>
-      <p>L'Église "Dernière Pluie de Pierres" est une communauté chrétienne chaleureuse et dynamique, ouverte à toutes et à tous, quelle que soit votre histoire ou votre parcours.</p>
-      <p>Nous croyons en un Dieu d'amour qui transforme les vies et rassemble les familles. Chaque dimanche, nous nous réunissons pour adorer, prier, et grandir ensemble dans notre foi.</p>
-      <p>Que vous soyez croyant de longue date ou simplement curieux, vous êtes le bienvenu parmi nous. Notre porte est toujours ouverte.</p>
-    </div>
-    <div class="welcome-verse">
-      <blockquote>« Car là où deux ou trois sont réunis en mon nom, je suis au milieu d'eux. »</blockquote>
-      <cite>Matthieu 18:20</cite>
+<!-- À PROPOS -->
+<section class="section about-section" id="bienvenue">
+  <div class="section-inner">
+    <div class="about-grid">
+      <div class="about-text reveal">
+        <span class="eyebrow">Notre histoire</span>
+        <h2 class="section-title">Une communauté fondée sur <em>la foi</em></h2>
+        <p>L'Église Dernière Pluie de Pierres est une communauté chrétienne chaleureuse et dynamique, ouverte à toutes et à tous, quelle que soit votre histoire ou votre parcours.</p>
+        <p>Nous croyons en un Dieu d'amour qui transforme les vies et rassemble les familles. Chaque dimanche, nous nous réunissons pour adorer, prier, et grandir ensemble dans notre foi.</p>
+        <p>Que vous soyez croyant de longue date ou simplement curieux, vous êtes le bienvenu parmi nous. Notre porte est toujours ouverte.</p>
+        <div class="stats-row">
+          <div class="stat">
+            <div class="stat-num">30+</div>
+            <div class="stat-label">Années de ministère</div>
+          </div>
+          <div class="stat">
+            <div class="stat-num">3×</div>
+            <div class="stat-label">Cultes par semaine</div>
+          </div>
+          <div class="stat">
+            <div class="stat-num">∞</div>
+            <div class="stat-label">Portes ouvertes</div>
+          </div>
+        </div>
+      </div>
+      <div class="about-verse reveal" style="transition-delay:0.15s">
+        <blockquote>« Car là où deux ou trois sont réunis en mon nom, je suis au milieu d'eux. »</blockquote>
+        <cite>Matthieu 18 : 20</cite>
+      </div>
     </div>
   </div>
 </section>
 
 <!-- CULTES -->
-<section class="cultes-section" id="cultes">
-  <div style="max-width: 1100px;">
-    <span class="section-label">Horaires</span>
-    <h2 class="section-title">Rejoignez-nous en culte</h2>
-    <div class="gold-divider"></div>
-
+<section class="section cultes-section" id="cultes">
+  <div class="section-inner">
+    <div style="max-width:540px" class="reveal">
+      <span class="eyebrow">Horaires</span>
+      <h2 class="section-title">Rejoignez-nous en <em>culte</em></h2>
+      <p class="section-lead">Trois moments de rassemblement chaque semaine pour prier, adorer et grandir ensemble.</p>
+    </div>
     <div class="cultes-grid">
-      <div class="culte-card">
-        <span class="culte-icon">🙏</span>
+      <div class="culte-card reveal" style="transition-delay:0.1s">
+        <div class="culte-icon-wrap">🙏</div>
         <h3>Culte du Dimanche</h3>
-        <span class="time">09h00</span>
+        <span class="culte-time">09h00</span>
         <p>Notre culte principal — louange, adoration, prédication et délivrance.</p>
       </div>
-   
-      <div class="culte-card">
-        <span class="culte-icon">🙏</span>
+      <div class="culte-card reveal" style="transition-delay:0.2s">
+        <div class="culte-icon-wrap">⚔️</div>
         <h3>Armée de Midi</h3>
-        <span class="time">Vendredi 12h30</span>
+        <span class="culte-time">Vendredi 12h30</span>
         <p>Un moment dédié à l'intercession et à la prière communautaire.</p>
       </div>
-      <div class="culte-card">
-        <span class="culte-icon">🙏</span>
-        <h3>Culte de Jeudi</h3>
-        <span class="time">Jeudi 16h</span>
-        <p> </p>
+      <div class="culte-card reveal" style="transition-delay:0.3s">
+        <div class="culte-icon-wrap">📖</div>
+        <h3>Culte du Jeudi</h3>
+        <span class="culte-time">Jeudi 16h00</span>
+        <p>Étude de la Parole et partage fraternel en milieu de semaine.</p>
       </div>
     </div>
   </div>
 </section>
 
 <!-- ÉVÉNEMENTS -->
-<section class="events-section" id="evenements">
-  <div class="events-bg"></div>
-  <div class="events-content">
-    <span class="section-label">Agenda</span>
-    <h2 class="section-title">Prochains événements</h2>
-    <div class="gold-divider"></div>
+<section class="section events-section" id="evenements">
+  <div class="section-inner">
+    <div class="reveal">
+      <span class="eyebrow">Agenda</span>
+      <h2 class="section-title">Prochains événements</h2>
+    </div>
     <div class="events-list">
-      <div class="event-item">
-        <div class="event-date"><span class="day">06-12</span><span class="month">Avril</span></div>
-        <div class="event-info"><h4>Lundi au Dimanche</h4><p>DER.PLU.P 30 ans </p></div>
-        <span class="event-tag">Anniversaire</span>
+      <div class="event-item reveal">
+        <div class="event-date-box">
+          <span class="day">06–12</span>
+          <span class="month">Avril</span>
+        </div>
+        <div class="event-info">
+          <h4>DERPLUP 30 ans</h4>
+          <p>Semaine de célébration — du lundi au dimanche</p>
+        </div>
+        <span class="event-badge">Anniversaire</span>
       </div>
-    
-      <div class="event-item">
-        <div class="event-date"><span class="day">05</span><span class="month">Avril</span></div>
-        <div class="event-info"><h4>Dimanche de Pâques</h4><p>Célébration de la Résurrection — culte à 09h00</p></div>
-        <span class="event-tag">Célébration</span>
+      <div class="event-item reveal">
+        <div class="event-date-box">
+          <span class="day">05</span>
+          <span class="month">Avril</span>
+        </div>
+        <div class="event-info">
+          <h4>Dimanche de Pâques</h4>
+          <p>Célébration de la Résurrection — culte à 09h00</p>
+        </div>
+        <span class="event-badge">Célébration</span>
       </div>
-     
     </div>
   </div>
 </section>
 
-<!-- CONTACT -->
-<section style="background: var(--white); padding: 7rem 5%;" id="contact">
-  <div class="contact-section">
-    <div class="contact-info">
-      <span class="section-label">Nous trouver</span>
-      <h2 class="section-title">Venez nous rendre visite</h2>
-      <div class="gold-divider"></div>
-      <div class="contact-detail">
-        <div class="icon">📍</div>
-        <div><h4>Adresse</h4><p><br>TOGO 2000 dans la von de la station Fastar, Lomé — Togo</p></div>
+<!-- VIDÉOS -->
+<section class="section videos-section" id="videos">
+  <div class="section-inner">
+    <div style="max-width:540px" class="reveal">
+      <span class="eyebrow">Sermons</span>
+      <h2 class="section-title">Regardez nos <em>prédications</em></h2>
+      <p class="section-lead">Retrouvez toutes nos prédications en direct et en replay sur notre chaîne YouTube.</p>
+    </div>
+    <div class="video-grid reveal" style="transition-delay:0.2s">
+      <div class="video-logo-wrap">
+        <img src="logo_dpp.jpg" alt="Logo DPP">
       </div>
-      <div class="contact-detail">
-        <div class="icon">📞</div>
-        <div><h4>Téléphone</h4><p>+228 90 04 40 46 <br> +228 91 56 46 87</p></div>
+      <div class="video-frame">
+        <iframe src="https://www.youtube.com/embed?listType=user_uploads&list=@propheteteko-agbomessan" allowfullscreen></iframe>
       </div>
-      
-      </div>
-      <div class="contact-detail">
-        <div class="icon">🕐</div>
-        <div><h4>Accueil</h4><p>Lundi – Vendredi : 8h00 – 17h00<br>Dimanche : dès 9h00</p></div>
+      <div class="video-logo-wrap">
+        <img src="logo_dpp.jpg" alt="Logo DPP">
       </div>
     </div>
-    <div class="contact-form">
-      <span class="section-label">Message</span>
-      <h2 class="section-title">Écrivez-nous</h2>
-      <div class="gold-divider"></div>
-      <div class="form-group"><input type="text" placeholder="Votre nom"></div>
-      <div class="form-group"><input type="email" placeholder="Votre email"></div>
-      <div class="form-group"><input type="text" placeholder="Sujet"></div>
-      <div class="form-group"><textarea placeholder="Votre message..."></textarea></div>
-      <button class="form-submit" onclick="alert('Message envoyé ! Que Dieu vous bénisse.')">Envoyer le message</button>
-    </div>
-  </div>
-</section>
-
-<!-- YOUTUBE -->
-<section style="background: var(--cream); padding: 6rem 5%;">
-  <div style="max-width: 1100px;">
-    <span class="section-label">Sermons</span>
-    <h2 class="section-title">Regardez nos prédications</h2>
-    <div class="gold-divider"></div>
-    <div style="margin-top: 2rem; display: grid; grid-template-columns: 1fr 2fr 1fr; gap: 2rem; align-items: center;">
-      
-      <!-- Logo gauche -->
-      <img src="logo-dpp.jpg" style="width:100%; height:250px; object-fit:contain; border-top: 3px solid var(--gold);">
-      
-      <!-- Vidéo YouTube -->
-      <iframe width="100%" height="250" src="https://www.youtube.com/embed?listType=user_uploads&list=@propheteteko-agbomessan" frameborder="0" allowfullscreen style="border-top: 3px solid var(--gold);"></iframe>
-      
-      <!-- Logo droit -->
-      <img src="logo-dpp.jpg" style="width:100%; height:250px; object-fit:contain; border-top: 3px solid var(--gold);">
-
-    </div>
-    <div style="margin-top: 2rem; text-align: center;">
-      <a href="https://youtube.com/@propheteteko-agbomessan" target="_blank" class="hero-cta">Voir toutes les vidéos</a>
+    <div class="yt-cta reveal">
+      <a href="https://youtube.com/@propheteteko-agbomessan" target="_blank" class="btn-hero btn-primary" style="display:inline-block;background:linear-gradient(135deg,var(--sky),var(--sky-dark));color:var(--white);">
+        <i class="fab fa-youtube" style="margin-right:0.5rem;"></i> Voir toutes les vidéos
+      </a>
     </div>
   </div>
 </section>
 
 <!-- GALERIE -->
-<section style="background: var(--white); padding: 6rem 5%;">
-  <div style="max-width: 1100px;">
-    <span class="section-label">Galerie</span>
-    <h2 class="section-title">Notre communauté en images</h2>
-    <div class="gold-divider"></div>
-    <div style="margin-top: 2rem; display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1rem;">
-      <img src="LOG30ANS.jpg" style="width:100%; height:200px; object-fit:cover; border-top: 3px solid var(--gold);">
-      <img src="dpp01.jpeg" style="width:100%; height:200px; object-fit:cover; border-top: 3px solid var(--gold);">
-      <img src="dpp03.jpeg" style="width:100%; height:200px; object-fit:cover; border-top: 3px solid var(--gold);">
-      <img src="dpp1.jpg" style="width:100%; height:200px; object-fit:cover; border-top: 3px solid var(--gold);">
-      <img src="dpp2.jpeg" style="width:100%; height:200px; object-fit:cover; border-top: 3px solid var(--gold);">
-      <img src="dpp4.jpeg" style="width:100%; height:200px; object-fit:cover; border-top: 3px solid var(--gold);">
-      <img src="dpp5.jpeg" style="width:100%; height:200px; object-fit:cover; border-top: 3px solid var(--gold);">
-      <img src="dpp6.jpeg" style="width:100%; height:200px; object-fit:cover; border-top: 3px solid var(--gold);">
-      <img src="logo-dpp.jpg" style="width:100%; height:200px; object-fit:cover; border-top: 3px solid var(--gold);">
+<section class="section gallery-section" id="galerie">
+  <div class="section-inner">
+    <div style="max-width:540px;margin-bottom:3rem;" class="reveal">
+      <span class="eyebrow">Galerie</span>
+      <h2 class="section-title">Notre <em>communauté</em> en images</h2>
+    </div>
+    <div class="gallery-grid reveal">
+      <div class="gallery-item">
+        <img src="LOG30ANS.jpg" alt="30 ans DERPLUP" loading="lazy">
+        <div class="gallery-overlay"></div>
+      </div>
+      <div class="gallery-item">
+        <img src="dpp01.jpeg" alt="Culte DPP" loading="lazy">
+        <div class="gallery-overlay"></div>
+      </div>
+      <div class="gallery-item">
+        <img src="dpp1.jpg" alt="Communauté DPP" loading="lazy">
+        <div class="gallery-overlay"></div>
+      </div>
+      <div class="gallery-item">
+        <img src="dpp03.jpeg" alt="Culte DPP" loading="lazy">
+        <div class="gallery-overlay"></div>
+      </div>
+      <div class="gallery-item">
+        <img src="dpp2.jpeg" alt="Adoration" loading="lazy">
+        <div class="gallery-overlay"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="section contact-section" id="contact">
+  <div class="section-inner">
+    <div class="contact-grid">
+      <div>
+        <span class="eyebrow reveal">Nous trouver</span>
+        <h2 class="section-title reveal">Venez nous rendre <em>visite</em></h2>
+        <div class="contact-details">
+          <div class="contact-item reveal">
+            <div class="contact-icon"><i class="fas fa-map-marker-alt"></i></div>
+            <div>
+              <h4>Adresse</h4>
+              <p>TOGO 2000, von de la station Fastar<br>Lomé, Togo</p>
+            </div>
+          </div>
+          <div class="contact-item reveal" style="transition-delay:0.1s">
+            <div class="contact-icon"><i class="fas fa-phone"></i></div>
+            <div>
+              <h4>Téléphone</h4>
+              <p>+228 90 04 40 46<br>+228 91 56 46 87</p>
+            </div>
+          </div>
+          <div class="contact-item reveal" style="transition-delay:0.2s">
+            <div class="contact-icon"><i class="fas fa-clock"></i></div>
+            <div>
+              <h4>Accueil</h4>
+              <p>Lundi – Vendredi : 8h00 – 17h00<br>Dimanche : dès 9h00</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="form-card reveal" style="transition-delay:0.2s">
+        <span class="eyebrow" style="margin-bottom:1rem;display:inline-flex;">Écrire un message</span>
+        <div id="form-success" style="display:none;text-align:center;padding:2.5rem 1rem;">
+          <div style="font-size:2.5rem;margin-bottom:1rem;">✅</div>
+          <h3 style="font-family:'Playfair Display',serif;font-size:1.3rem;color:var(--sky-deep);margin-bottom:0.5rem;">Message envoyé !</h3>
+          <p style="color:var(--muted);font-size:0.9rem;line-height:1.7;">Que Dieu vous bénisse. Nous vous répondrons dans les plus brefs délais.</p>
+          <button onclick="resetForm()" style="margin-top:1.5rem;padding:0.6rem 1.5rem;background:var(--sky-pale);color:var(--sky-dark);border:1px solid var(--border);border-radius:100px;font-size:0.82rem;font-weight:600;cursor:pointer;letter-spacing:0.05em;">Envoyer un autre message</button>
+        </div>
+        <div id="form-body">
+          <div class="form-row">
+            <div class="form-group">
+              <label>Prénom</label>
+              <input id="f-prenom" type="text" placeholder="Jean" required>
+            </div>
+            <div class="form-group">
+              <label>Nom</label>
+              <input id="f-nom" type="text" placeholder="Dupont" required>
+            </div>
+          </div>
+          <div class="form-group">
+            <label>Votre email</label>
+            <input id="f-email" type="email" placeholder="jean.dupont@email.com" required>
+          </div>
+          <div class="form-group">
+            <label>Sujet</label>
+            <input id="f-sujet" type="text" placeholder="Demande d'information" required>
+          </div>
+          <div class="form-group">
+            <label>Message</label>
+            <textarea id="f-message" placeholder="Votre message..." required></textarea>
+          </div>
+          <div id="form-error" style="display:none;background:#FEF2F2;border:1px solid #FECACA;border-radius:10px;padding:0.75rem 1rem;margin-bottom:1rem;font-size:0.85rem;color:#B91C1C;"></div>
+          <button class="btn-submit" id="btn-send" onclick="sendEmail()">
+            <span id="btn-label">Envoyer le message</span>
+            <span id="btn-loading" style="display:none;">
+              <i class="fas fa-circle-notch fa-spin" style="margin-right:0.4rem;"></i>Envoi en cours…
+            </span>
+          </button>
+          <p style="margin-top:0.75rem;font-size:0.75rem;color:var(--muted);text-align:center;">
+            <i class="fas fa-lock" style="margin-right:0.3rem;"></i>Envoyé à <strong>centredpp@gmail.com</strong>
+          </p>
+        </div>
+      </div>
     </div>
   </div>
 </section>
 
 <!-- FOOTER -->
 <footer>
-  <span class="logo">✝ Église "Dernière Pluie de Pierres"</span>
-  <p>TOGO 2000 dans la von de la station FASTAR, Lomé — Togo &nbsp;|&nbsp; +228 90 04 40 46 <br> +228 91 56 46 87</p>
-  <p style="margin-top:0.5rem;">© 2026 — Tous droits réservés</p>
-  <span class="cross">✝</span>
-
-  <!-- RÉSEAUX SOCIAUX -->
-<div style="display: flex; gap: 1rem; justify-content: center; margin: 1.5rem 0;">
-  
-  <!-- Facebook -->
-  <a href="https://www.facebook.com/share/1E3XL1nHso/" target="_blank" style="width:45px; height:45px; background: rgba(255,255,255,0.1); border-radius: 50%; display:flex; align-items:center; justify-content:center; color: var(--gold); text-decoration:none; font-size:1.2rem; transition: all 0.3s;" onmouseover="this.style.background='var(--gold)';this.style.color='var(--navy)'" onmouseout="this.style.background='rgba(255,255,255,0.1)';this.style.color='var(--gold)'">f</a>
-
-  <!-- YouTube -->
-  <a href="https://youtube.com/@propheteteko-agbomessan" target="_blank" style="width:45px; height:45px; background: rgba(255,255,255,0.1); border-radius: 50%; display:flex; align-items:center; justify-content:center; color: var(--gold); text-decoration:none; font-size:1.2rem; transition: all 0.3s;" onmouseover="this.style.background='var(--gold)';this.style.color='var(--navy)'" onmouseout="this.style.background='rgba(255,255,255,0.1)';this.style.color='var(--gold)'">▶</a>
-
-  <!-- TikTok -->
-  <a href="https://www.tiktok.com/@centredpp?_r=1&_t=ZS-94h0MMLiCwc" target="_blank" style="width:45px; height:45px; background: rgba(255,255,255,0.1); border-radius: 50%; display:flex; align-items:center; justify-content:center; color: var(--gold); text-decoration:none; font-size:1.2rem; transition: all 0.3s;" onmouseover="this.style.background='var(--gold)';this.style.color='var(--navy)'" onmouseout="this.style.background='rgba(255,255,255,0.1)';this.style.color='var(--gold)'">♪</a>
-
-</div>
-
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <div class="logo-wrap">
+        <img src="logo_dpp.jpg" alt="Logo DPP">
+        <h3>Église Dernière<br>Pluie de Pierres</h3>
+      </div>
+      <p>Une communauté chrétienne fondée sur la foi, l'amour et la délivrance. Ouvert à tous depuis plus de 30 ans à Lomé, Togo.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Navigation</h4>
+      <ul>
+        <li><a href="#bienvenue">À propos</a></li>
+        <li><a href="#cultes">Cultes</a></li>
+        <li><a href="#evenements">Événements</a></li>
+        <li><a href="#videos">Sermons</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Contact</h4>
+      <p>TOGO 2000, von de la station Fastar<br>Lomé, Togo<br><br>+228 90 04 40 46<br>+228 91 56 46 87</p>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2026 Église Dernière Pluie de Pierres (DERPLUP) — Tous droits réservés</p>
+    <div class="socials">
+      <a href="https://www.facebook.com/share/1E3XL1nHso/" target="_blank" class="social-btn" title="Facebook">
+        <i class="fab fa-facebook-f"></i>
+      </a>
+      <a href="https://youtube.com/@propheteteko-agbomessan" target="_blank" class="social-btn" title="YouTube">
+        <i class="fab fa-youtube"></i>
+      </a>
+      <a href="https://www.tiktok.com/@centredpp" target="_blank" class="social-btn" title="TikTok">
+        <i class="fab fa-tiktok"></i>
+      </a>
+    </div>
+  </div>
 </footer>
 
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+<script>
+/* ── Scroll reveal ── */
+const reveals=document.querySelectorAll('.reveal');
+const io=new IntersectionObserver((entries)=>{
+  entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');io.unobserve(e.target);}});
+},{threshold:0.12});
+reveals.forEach(el=>io.observe(el));
+
+/* ── EmailJS ──
+   ÉTAPES DE CONFIGURATION (une seule fois) :
+   1. Créer un compte gratuit sur https://www.emailjs.com
+   2. Ajouter un "Email Service" (Gmail → connecter centredpp@gmail.com) → copier le Service ID
+   3. Créer un "Email Template" avec les variables : {{prenom}}, {{nom}}, {{email}}, {{sujet}}, {{message}}
+      Destinataire du template : centredpp@gmail.com
+      Copier le Template ID
+   4. Dans "Account" > "Public Key", copier la clé publique
+   5. Remplacer les 3 valeurs ci-dessous par vos identifiants réels
+*/
+const EMAILJS_PUBLIC_KEY  = 'VOTRE_PUBLIC_KEY';   // ex: "abc123XYZ"
+const EMAILJS_SERVICE_ID  = 'VOTRE_SERVICE_ID';   // ex: "service_xxxxxx"
+const EMAILJS_TEMPLATE_ID = 'VOTRE_TEMPLATE_ID';  // ex: "template_xxxxxx"
+
+emailjs.init({ publicKey: EMAILJS_PUBLIC_KEY });
+
+function sendEmail() {
+  const prenom  = document.getElementById('f-prenom').value.trim();
+  const nom     = document.getElementById('f-nom').value.trim();
+  const email   = document.getElementById('f-email').value.trim();
+  const sujet   = document.getElementById('f-sujet').value.trim();
+  const message = document.getElementById('f-message').value.trim();
+  const errEl   = document.getElementById('form-error');
+
+  errEl.style.display='none';
+
+  if(!prenom||!nom||!email||!sujet||!message){
+    errEl.textContent='Veuillez remplir tous les champs.';
+    errEl.style.display='block'; return;
+  }
+  const emailRegex=/^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  if(!emailRegex.test(email)){
+    errEl.textContent='Adresse email invalide.';
+    errEl.style.display='block'; return;
+  }
+
+  const btn=document.getElementById('btn-send');
+  document.getElementById('btn-label').style.display='none';
+  document.getElementById('btn-loading').style.display='inline';
+  btn.disabled=true;
+
+  emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, {
+    prenom, nom, email, sujet, message,
+    to_email: 'centredpp@gmail.com'
+  }).then(()=>{
+    document.getElementById('form-body').style.display='none';
+    document.getElementById('form-success').style.display='block';
+  }).catch((err)=>{
+    errEl.textContent='Erreur lors de l\'envoi. Veuillez réessayer ou nous appeler directement.';
+    errEl.style.display='block';
+    document.getElementById('btn-label').style.display='inline';
+    document.getElementById('btn-loading').style.display='none';
+    btn.disabled=false;
+    console.error('EmailJS error:', err);
+  });
+}
+
+function resetForm(){
+  ['f-prenom','f-nom','f-email','f-sujet','f-message'].forEach(id=>document.getElementById(id).value='');
+  document.getElementById('form-body').style.display='block';
+  document.getElementById('form-success').style.display='none';
+  document.getElementById('btn-label').style.display='inline';
+  document.getElementById('btn-loading').style.display='none';
+  document.getElementById('btn-send').disabled=false;
+}
+</script>
 </body>
 </html>
